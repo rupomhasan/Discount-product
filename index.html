@@ -81,13 +81,14 @@
 
               <div class="card-actions my-2">
                 <div
+                  id="discount-btn2"
                   class="btn btn-sm text-white bg-violet-500 hover:bg-violet-600"
                 >
                   order now
                 </div>
               </div>
               <p class="font-semibold text-xl">
-                Regular Price : $<span>6090</span>
+                Regular Price : $<span id="shoePrice2">6090</span>
               </p>
             </div>
           </div>
@@ -114,38 +115,21 @@
 
               <div class="card-actions my-2">
                 <div
+                  id="discount-btn3"
                   class="btn btn-sm text-white bg-violet-500 hover:bg-violet-600"
                 >
                   order Now
                 </div>
               </div>
               <p class="font-semibold text-xl">
-                Regular Price : $<span>1890</span>
+                Regular Price : $<span id="shoePrice3">1890</span>
               </p>
             </div>
           </div>
         </div>
       </section>
     </main>
-    <script>
-      let clickCount = 0;
-      function getDiscountValue(priceId1, parcentage) {
-        const priceText = document.getElementById(priceId1);
-        const priceAmount = parseFloat(priceText.innerText);
-        const discountPrice = priceAmount - (parcentage / 100) * priceAmount;
-        if (clickCount % 2 === 0) {
-          priceText.innerText = discountPrice.toFixed(2);
-        } else {
-          priceText.innerText = priceAmount.toFixed(2);
-        }
-        clickCount++;
-      }
-
-      document
-        .getElementById("discount-btn1")
-        .addEventListener("click", function () {
-          getDiscountValue("shoePrice1", 30);
-        });
-    </script>
+    <!-- <script src="file.js"></script> -->
+    <script src="index.js"></script>
   </body>
 </html>
