@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Discount producte</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@3.5.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="m-3">
+    <header>
+      <h1 class="font-semibold my-10 text-5xl text-center">
+        Best
+        <span class="text-red-600">Shoes</span>
+      </h1>
+    </header>
+    <main>
+      <section class="max-w-screen-xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-5">
+          <!-- shoes 1 -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative">
+              <div class="badge badge-secondary absolute bottom-0 left-5">
+                5% Bkash | 18% Nagad
+              </div>
+              <div
+                class="badge badge-secondary absolute left-7 top-8 -rotate-45"
+              >
+                30% Off
+              </div>
+
+              <p class="absolute left-2 top-4 -rotate-45 text-xl font-semibold">
+                Aplay
+              </p>
+              <img class="h-48" src="/shoes/shoes1.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Shoes!</h2>
+
+              <div class="card-actions my-2">
+                <div
+                  id="discount-btn1"
+                  class="btn btn-sm text-white bg-violet-500 hover:bg-violet-600"
+                >
+                  Aplay Discount
+                </div>
+              </div>
+              <p class="font-semibold text-xl">
+                Regular Price : $<span id="shoePrice1">1290</span>
+              </p>
+            </div>
+          </div>
+          <!-- Shoes 2  -->
+          <div class="card bg-base-100 shadow-xl">
+            <figure class="relative">
+              <div
+                class="badge badge-secondary absolute left-7 top-8 -rotate-45"
+              >
+                48% Off
+              </div>
+              <div class="badge badge-secondary absolute bottom-0 left-5">
+                5% Bkash | 18% Nagad
+              </div>
+
+              <p class="absolute left-2 top-4 -rotate-45 text-xl font-semibold">
+                Aplay
+              </p>
+
+              <img class="h-48" src="/shoes/shoes2.png" alt="Shoes" />
+            </figure>
+
+            <div class="card-body">
+              <h2 class="card-title">
+                Shoes!
+                <div class="badge badge-secondary">47% Off</div>
+              </h2>
+
+              <div class="card-actions my-2">
+                <div
+                  class="btn btn-sm text-white bg-violet-500 hover:bg-violet-600"
+                >
+                  order now
+                </div>
+              </div>
+              <p class="font-semibold text-xl">
+                Regular Price : $<span>6090</span>
+              </p>
+            </div>
+          </div>
+          <!-- shoes 3 -->
+          <div class="card bg-base-100 shadow-xl">
+            <figurem class="relative">
+              <div class="badge badge-secondary absolute bottom-0 left-5">
+                5% bakash | 18% Nagad
+              </div>
+              <div
+                class="badge badge-secondary absolute left-7 top-8 -rotate-45"
+              >
+                36% Off
+              </div>
+
+              <p class="absolute left-2 top-4 -rotate-45 text-xl font-semibold">
+                Aplay
+              </p>
+
+              <img class="h-48" src="/shoes/shoes3.png" alt="Shoes" />
+            </figurem>
+            <div class="card-body">
+              <h2 class="card-title">Shoes!</h2>
+
+              <div class="card-actions my-2">
+                <div
+                  class="btn btn-sm text-white bg-violet-500 hover:bg-violet-600"
+                >
+                  order Now
+                </div>
+              </div>
+              <p class="font-semibold text-xl">
+                Regular Price : $<span>1890</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      let clickCount = 0;
+      function getDiscountValue(priceId1, parcentage) {
+        const priceText = document.getElementById(priceId1);
+        const priceAmount = parseFloat(priceText.innerText);
+        const discountPrice = priceAmount - (parcentage / 100) * priceAmount;
+        if (clickCount % 2 === 0) {
+          priceText.innerText = discountPrice.toFixed(2);
+        } else {
+          priceText.innerText = priceAmount.toFixed(2);
+        }
+        clickCount++;
+      }
+
+      document
+        .getElementById("discount-btn1")
+        .addEventListener("click", function () {
+          getDiscountValue("shoePrice1", 30);
+        });
+    </script>
+  </body>
+</html>
